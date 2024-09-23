@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 pub mod arch;
-
+use core::arch::asm;
 use core::panic::PanicInfo;
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {

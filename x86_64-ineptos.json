@@ -8,6 +8,9 @@
   "os": "none",
   "linker-flavor": "ld.lld",
   "linker": "rust-lld",
+  "pre-link-args": {
+    "ld.lld": ["-Tkernel/lds/x86_64-qemu.ld"]
+  },
   "panic-strategy": "abort",
   "disable-redzone": true,
   "features": "-mmx,-sse,+soft-float",
