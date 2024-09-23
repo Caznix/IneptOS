@@ -1,0 +1,3 @@
+cd limine
+
+./bootstrap.sh
