@@ -1,2 +1,2 @@
-# InpetOS
+# IneptOS
 Able will pay...
