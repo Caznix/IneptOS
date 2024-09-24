@@ -13,7 +13,7 @@ override USER_VARIABLE = $(if $(filter $(origin $(1)),default undefined),$(eval 
 $(call USER_VARIABLE,KARCH,x86_64)
 
 ifeq ($(RUST_TARGET),)
-    override RUST_TARGET := $(KARCH)
+    override RUST_TARGET := $(KARCH)-unknown-none
 	ifeq ($(KARCH),riscv64)
     	override RUST_TARGET := riscv64gc-unknown-none-elf
 	endif
@@ -31,8 +31,8 @@ endif
 # Default target.
 .PHONY: all
 all:
-	RUSTFLAGS="-C relocation-model=static" cargo build --target ./targets/$(RUST_TARGET)-ineptos.json --profile $(RUST_PROFILE)
-	cp target/$(RUST_TARGET)-ineptos/$(RUST_PROFILE_SUBDIR)/$$(cd target/$(RUST_TARGET)-ineptos/$(RUST_PROFILE_SUBDIR) && find -maxdepth 1 -perm -111 -type f) kernel
+	RUSTFLAGS="-C relocation-model=static" cargo build --target $(RUST_TARGET) --profile $(RUST_PROFILE)
+	cp target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR)/$$(cd target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR) && find -maxdepth 1 -perm -111 -type f) kernel
 
 # Remove object files and the final executable.
 .PHONY: clean
@@ -41,3 +41,4 @@ clean:
 	rm -rf kernel
 
 .PHONY: distclean
+distclean: clean
