@@ -9,7 +9,7 @@
   "linker-flavor": "ld.lld",
   "linker-is-gnu": true,
   "pre-link-args": {
-    "ld.lld": ["-Tkernel/lds/aarch64-qemu.ld"]
+    "ld.lld": ["-T./lds/aarch64-qemu.ld"]
   },
   "llvm-target": "aarch64-unknown-none",
   "max-atomic-width": 128,

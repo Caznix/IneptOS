@@ -6,13 +6,14 @@
   "target-pointer-width": "64",
   "target-c-int-width": "32",
   "os": "none",
+  "executables": true,
   "linker-flavor": "ld.lld",
   "linker": "rust-lld",
-  "pre-link-args": {
-    "ld.lld": ["-Tkernel/lds/x86_64-qemu.ld"]
-  },
   "panic-strategy": "abort",
   "disable-redzone": true,
-  "features": "-mmx,-sse,+soft-float",
-  "executables": true
+  "features": "",
+  "code-model": "kernel",
+  "pre-link-args": {
+    "ld.lld": ["--gc-sections", "--script=./lds/x86_64-qemu.ld"]
+  }
 }

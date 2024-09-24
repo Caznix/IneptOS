@@ -21,5 +21,9 @@ Cargo.lock
 #.idea/
 
 # Added by cargo
-
-/target
+*.iso
+/bin
+/ovmf
+**/target
+/limine
+/bin
