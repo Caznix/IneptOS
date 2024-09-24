@@ -5,4 +5,4 @@ Able will pay...
 - [ ] Implement Serial output
 - [ ] Add UEFI support
 - [ ] Implement Limine bootloader
-- [ ] Kill able
+- [ ] Kill able and RandomScientist
