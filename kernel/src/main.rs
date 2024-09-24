@@ -41,7 +41,6 @@ unsafe extern "C" fn kmain() -> ! {
 
                 // Write 0xFFFFFFFF to the provided pixel offset to fill it white.
                 *(framebuffer.addr().add(pixel_offset as usize) as *mut u32) = 0xFFFFFFFF;
-                loop {}
             }
         }
     }
@@ -52,7 +51,6 @@ unsafe extern "C" fn kmain() -> ! {
 #[panic_handler]
 fn rust_panic(_info: &core::panic::PanicInfo) -> ! {
     hcf();
-    loop {}
 }
 
 fn hcf() -> ! {
