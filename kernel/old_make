@@ -30,9 +30,12 @@ endif
 
 # Default target.
 .PHONY: all
-all:
+all: 
 	RUSTFLAGS="-C relocation-model=static" cargo build --target $(RUST_TARGET) --profile $(RUST_PROFILE)
+
+	@echo "Running command: cp target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR)/$$(cd target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR) && find -maxdepth 1 -perm -111 -type f) kernel"
 	cp target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR)/$$(cd target/$(RUST_TARGET)/$(RUST_PROFILE_SUBDIR) && find -maxdepth 1 -perm -111 -type f) kernel
+
 # RUSTFLAGS="-C relocation-model=static" cargo build --target ./targets/$(RUST_TARGET)-ineptos.json --profile $(RUST_PROFILE)
 # cp target/$(RUST_TARGET)-ineptos/$(RUST_PROFILE_SUBDIR)/$$(cd target/$(RUST_TARGET)-ineptos/$(RUST_PROFILE_SUBDIR) && find -maxdepth 1 -perm -111 -type f) kernel
 

@@ -1,8 +1,8 @@
-build FLAG="12":
-    cargo build -j{{ FLAG }}
+run TARGET="x86_64":
+    cargo xtask run {{ TARGET }}
 
-arm FLAG="12":
-    cargo build -j{{ FLAG }} --target ./aarch64-ineptos.json
+build TARGET="x86_64":
+    cargo xtask build {{ TARGET }}
 
-run FLAG="12":
-    cargo run -j{{ FLAG }}
+clean TARGET="all":
+    cargo xtask clean {{ TARGET }}
