@@ -17,7 +17,8 @@ pub fn build_x86_64() {
         .arg("--target=x86_64-unknown-none")
         .output();
 
-    let target_dir = "kernel/target/x86_64-unknown-none/debug";
+    let target_dir = "target/x86_64-unknown-none/debug";
+
     let find_output = Command::new("find")
         .arg(&target_dir)
         .arg("-maxdepth")
