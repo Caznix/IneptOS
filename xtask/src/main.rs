@@ -8,14 +8,14 @@
 // cargo xtask clean target
 
 mod run;
-mod build;
+mod kbuild;
 mod clean;
 mod cli;
 mod iso;
 
 use cli::{Target, Task};
 use run::{qemu_open_aarch64, qemu_open_riscv64, qemu_open_x86_64};
-use build::{build_aarch64, build_riscv64, build_x86_64};
+use kbuild::{build_aarch64, build_riscv64, build_x86_64};
 use clean::clean;
 
 use clap::Parser;

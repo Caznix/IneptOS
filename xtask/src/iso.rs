@@ -1,7 +1,7 @@
 use std::process::Command;
 use std::fs;
 
-use crate::build::{build_aarch64, build_limine, build_riscv64, build_x86_64};
+use crate::kbuild::{build_aarch64, build_limine, build_riscv64, build_x86_64};
 
 pub fn iso_create_x86_64() {
     build_limine();
