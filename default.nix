@@ -21,6 +21,7 @@ pkgs.mkShell {
     pkg-config
     libisoburn
     mold
+    qemu_full
     # other dependencies
     #gtk3
     #wrapGAppsHook
